@@ -24,5 +24,7 @@ describe("basic math", () => {
   //deuxieme test
   it("substract two numbers", () => {
     expect(10 - 7).toBe(3);
+    // fait expres pour test l'erreur
+    expect(10 - 3).toBe(6);
   });
 });
