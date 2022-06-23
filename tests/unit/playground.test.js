@@ -28,3 +28,18 @@ describe("basic math", () => {
     expect(10 - 3).toBe(6);
   });
 });
+
+//test playground.js : fonction EvenOrOdd
+import { evenOrOdd } from "@/playground";
+describe("evenOrOdd", () => {
+  describe("when the number is even", () => {
+    it("indicates number is even", () => {
+      expect(evenOrOdd(4)).toBe("Even");
+    });
+  });
+  describe("when the number is Odd", () => {
+    it("indicate the number is Odd", () => {
+      expect(evenOrOdd(3)).toBe("Odd");
+    });
+  });
+});
