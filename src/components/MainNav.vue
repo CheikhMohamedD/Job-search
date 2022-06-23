@@ -5,7 +5,10 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
-        <a href="/" class="flex items-center h-full text-xl">BOBO careers</a>
+        <a href="/" class="flex items-center h-full text-xl font-bold">{{
+          company
+        }}</a>
+        <h2 class="flex items-center h-full ml-2">par {{ author.nickname }}</h2>
       </div>
     </div>
   </header>
@@ -13,6 +16,18 @@
 
 <script>
 export default {
-  name: "MainNav",
+  name: "MainNav", // Le nom du composant qui apparaitra sur App.vue
+  // Les donnees qui apparaitront sur le template via l'interpolation {{ donnee a afficher :good:}}
+  data() {
+    return {
+      company: "SenClient",
+      //pour acceder aux sous elements via la syntaxe element.sous-element
+      author: {
+        nickname: "ZamZam",
+        firstname: "Cheikh Mohamed",
+        lastname: "Diack",
+      },
+    };
+  },
 };
 </script>
