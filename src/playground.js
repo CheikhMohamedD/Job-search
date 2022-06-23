@@ -1,7 +1,18 @@
-// // Declare an array of fruits and vegies
-// const fruits = ["Apple", "banana", "orange"];
-// const vegetables = ["cucumber", "radish"];
-// // Les trois points avant le tableau permettent de copier le contenu du tableau et de les stocker sur un nouveau tableau
-// console.log([...fruits, vegetables]);
-// console.log([fruits, ...vegetables]);
-// console.log([...fruits, ...vegetables]); // cette ligne nous montre comment fusionner 2 tableaux
+/* Debut : Dev data renderer
+const developer = {
+  salary: 10000,
+  experience: 4.5,
+  techstack: ["Vue", "Html", "css"],
+  lookingForWork: true,
+  doubleSalary() {
+    this.salary = this.salary * 2;
+    this.lookingForWork = false;
+  },
+};
+console.log(developer);
+console.log(developer.lookingForWork);
+// Now we double THE SALARY  and we turn seeking job to false.
+developer.doubleSalary();
+console.log(developer);
+console.log(developer.lookingForWork);
+FIN*/
