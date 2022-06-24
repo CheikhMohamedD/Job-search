@@ -2,14 +2,11 @@ import { mount } from "@vue/test-utils";
 import MainNav from "@/components/MainNav.vue";
 
 describe("MainNav", () => {
-  it("display the company name", () => {
-    const wrapper = mount(MainNav, {
-      data() {
-        return {
-          company: "SaClient",
-        };
-      },
+  it("display the company name", async () => {
+    const wrapper = mount(MainNav);
+    await wrapper.setData({
+      company: "SaClient",
     });
-    expect(wrapper.text()).toMatch("SenClient");
+    expect(wrapper.text()).toMatch("SaClient");
   });
 });
