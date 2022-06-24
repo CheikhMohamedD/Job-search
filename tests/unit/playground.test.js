@@ -24,13 +24,13 @@ describe("basic math", () => {
   //deuxieme test
   it("substract two numbers", () => {
     expect(10 - 7).toBe(3);
-    // fait expres pour test l'erreur
-    expect(10 - 3).toBe(6);
+    // fait expres pour tester l'erreur
+    // expect(10 - 3).toBe(6);
   });
 });
 
 //test playground.js : fonction EvenOrOdd
-import { evenOrOdd } from "@/playground";
+import { evenOrOdd, multiply } from "@/playground";
 describe("evenOrOdd", () => {
   describe("when the number is even", () => {
     it("indicates number is even", () => {
@@ -41,5 +41,12 @@ describe("evenOrOdd", () => {
     it("indicate the number is Odd", () => {
       expect(evenOrOdd(3)).toBe("Odd");
     });
+  });
+});
+
+//test playground.js : fonction multiply
+describe("multiply", () => {
+  it("should multiply 2 numbers", () => {
+    expect(multiply(2, 3)).toBe(6);
   });
 });
