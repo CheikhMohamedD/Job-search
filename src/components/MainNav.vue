@@ -8,7 +8,6 @@
         <a href="/" class="flex items-center h-full text-xl font-bold">{{
           company
         }}</a>
-        <h2 class="flex items-center h-full ml-2">par {{ author.nickname }}</h2>
       </div>
     </div>
   </header>
@@ -22,11 +21,11 @@ export default {
     return {
       company: "SenClient",
       //pour acceder aux sous elements via la syntaxe element.sous-element
-      author: {
-        nickname: "ZamZam",
-        firstname: "Cheikh Mohamed",
-        lastname: "Diack",
-      },
+      // author: {
+      //   nickname: "ZamZam",
+      //   firstname: "Cheikh Mohamed",
+      //   lastname: "Diack",
+      // },
     };
   },
 };
