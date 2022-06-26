@@ -5,8 +5,8 @@ describe("MainNav", () => {
   it("display the company name", async () => {
     const wrapper = mount(MainNav);
     await wrapper.setData({
-      company: "SaClient",
+      company: "CompZone",
     });
-    expect(wrapper.text()).toMatch("SaClient");
+    expect(wrapper.text()).toMatch("CompZone");
   });
 });
