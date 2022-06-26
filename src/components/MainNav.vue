@@ -14,22 +14,14 @@
             <li class="h-full">
               <a href="" class="flex items-center h-full py-2.5">Teams</a>
             </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Locations</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5"
-                >Life at SenClient</a
-              >
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">How we hire</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Students</a>
-            </li>
-            <li class="h-full ml-9">
-              <a href="" class="flex items-center h-full py-2.5">Jobs</a>
+            <li
+              class="h-full ml-9"
+              v-for="menuItem in menuItems"
+              :key="menuItem"
+            >
+              <a href="" class="flex items-center h-full py-2.5">{{
+                menuItem
+              }}</a>
             </li>
           </ul>
         </nav>
@@ -52,6 +44,14 @@ export default {
       //   lastname: "Diack",
       // },
       url: "https://careers.google.com",
+      menuItems: [
+        "Teams",
+        "Locations",
+        "Life at SenClient",
+        "How we hire",
+        "Students",
+        "Jobs",
+      ],
     };
   },
 };
