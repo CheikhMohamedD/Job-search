@@ -26,15 +26,26 @@
             </li>
           </ul>
         </nav>
+        <div class="flex items-center h-full ml-auto">
+          <profile-image v-if="isLoggedIn" />
+          <action-button v-else />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import ActionButton from "@/components/ActionButton.vue";
+import ProfileImage from "@/components/ProfileImage.vue";
+
 export default {
   name: "MainNav", // Le nom du composant qui apparaitra sur App.vue
   // Les donnees qui apparaitront sur le template via l'interpolation {{ donnee a afficher :good:}}
+  components: {
+    ActionButton,
+    ProfileImage,
+  },
   data() {
     return {
       company: "SenClient",
@@ -53,6 +64,7 @@ export default {
         "Students",
         "Jobs",
       ],
+      isLoggedIn: false,
     };
   },
 };
