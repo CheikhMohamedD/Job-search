@@ -10,6 +10,7 @@ describe("MainNav", () => {
       "SenClient"
     );
   });
+
   it("displays menu items for navigation", () => {
     //findAll("li") est pour localiser les balises et ("[...]") s'utilise quand on veut localiser les attributs dans la balise.
     // const navigationMenuItems = wrapper.findAll("li"); // Rechercher tous les li se trouvant dans le composant MainNav.
@@ -25,5 +26,11 @@ describe("MainNav", () => {
       "Students",
       "Jobs",
     ]);
+  });
+
+  describe("When user is logged out", () => {
+    it("displays a Sign in button", () => {
+      expect(wrapper.find("[data-test='main-nav-button-item']")).toBeFalsy;
+    });
   });
 });
