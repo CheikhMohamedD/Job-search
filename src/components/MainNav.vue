@@ -6,15 +6,19 @@
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
         <!-- le href du <a> est lie au script data() par une directive appelle le binding (v-bind) a mettre avant le href -->
-        <a :href="url" class="flex items-center h-full text-xl font-bold">{{
-          company
-        }}</a>
+        <a
+          :href="url"
+          class="flex items-center h-full text-xl font-bold"
+          data-test="main-nav-link-item"
+          >{{ company }}</a
+        >
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
               v-for="menuItem in menuItems"
               :key="menuItem"
               class="h-full ml-9 first:ml-0"
+              data-test="main-nav-list-item"
             >
               <a href="" class="flex items-center h-full py-2.5">{{
                 menuItem
