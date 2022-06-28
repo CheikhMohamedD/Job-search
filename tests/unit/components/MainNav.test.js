@@ -32,15 +32,8 @@ describe("MainNav", () => {
   describe("When user is logged out", () => {
     it("prompt user to Sign in button", () => {
       //comparaison de l'expectation avec la donnee booleen du MainNav
-      const wrapperData = mount(MainNav, {
-        data() {
-          return {
-            isLoggedIn: false,
-          };
-        },
-      });
-      const button = wrapperData.find("[data-test='main-nav-button-item']");
-      const profileImage = wrapperData.find("[data-test='main-nav-pfp-item']");
+      const button = wrapper.find("[data-test='main-nav-button-item']");
+      const profileImage = wrapper.find("[data-test='main-nav-pfp-item']");
       //button is true and pfp is false
       expect(button.exists()).toBe(true);
       expect(profileImage.exists()).toBe(false);
@@ -48,18 +41,15 @@ describe("MainNav", () => {
   });
   //inverse
   describe("When the user logs in", () => {
-    it("displays user profile picture", () => {
-      const wrapperData = mount(MainNav, {
-        data() {
-          return {
-            isLoggedIn: true,
-          };
-        },
-      });
-      const button = wrapperData.find("[data-test='main-nav-button-item']");
-      const profileImage = wrapperData.find("[data-test='main-nav-pfp-item']");
+    it("displays user profile picture", async () => {
+      let profileImage = wrapper.find("[data-test='main-nav-pfp-item']");
+      expect(profileImage.exists()).toBe(false);
+
+      const button = wrapper.find("[data-test='main-nav-button-item']");
+      await button.trigger("click");
+
       //button is false and pfp is true
-      expect(button.exists()).toBe(false);
+      profileImage = wrapper.find("[data-test='main-nav-pfp-item']");
       expect(profileImage.exists()).toBe(true);
     });
   });
