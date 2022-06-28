@@ -28,9 +28,39 @@ describe("MainNav", () => {
     ]);
   });
 
+  //Cas des composants <button> et <profilepicture>
   describe("When user is logged out", () => {
-    it("displays a Sign in button", () => {
-      expect(wrapper.find("[data-test='main-nav-button-item']")).toBeFalsy;
+    it("prompt user to Sign in button", () => {
+      //comparaison de l'expectation avec la donnee booleen du MainNav
+      const wrapperData = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: false,
+          };
+        },
+      });
+      const button = wrapperData.find("[data-test='main-nav-button-item']");
+      const profileImage = wrapperData.find("[data-test='main-nav-pfp-item']");
+      //button is true and pfp is false
+      expect(button.exists()).toBe(true);
+      expect(profileImage.exists()).toBe(false);
+    });
+  });
+  //inverse
+  describe("When the user logs in", () => {
+    it("displays user profile picture", () => {
+      const wrapperData = mount(MainNav, {
+        data() {
+          return {
+            isLoggedIn: true,
+          };
+        },
+      });
+      const button = wrapperData.find("[data-test='main-nav-button-item']");
+      const profileImage = wrapperData.find("[data-test='main-nav-pfp-item']");
+      //button is false and pfp is true
+      expect(button.exists()).toBe(false);
+      expect(profileImage.exists()).toBe(true);
     });
   });
 });
