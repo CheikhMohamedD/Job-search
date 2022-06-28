@@ -30,6 +30,7 @@
           <profile-image v-if="isLoggedIn" data-test="main-nav-pfp-item" />
           <action-button
             v-else
+            text="Sign In"
             data-test="main-nav-button-item"
             @click="loginUser"
           />
