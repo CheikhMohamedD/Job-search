@@ -2,6 +2,9 @@
   <button :class="{ primary: primary }">
     {{ text }}
   </button>
+  <button :class="{ primary: primary }" @click="doubleHeight">
+    {{ area }}
+  </button>
 </template>
 
 <script>
@@ -11,7 +14,20 @@ export default {
   data() {
     return {
       primary: true,
+      width: 10,
+      height: 5,
     };
+  },
+  //la proprietes Computed permet d'avoir des donnees dynamiques comme sur notre exemple de la surface
+  computed: {
+    area() {
+      return this.width * this.height;
+    },
+  },
+  methods: {
+    doubleHeight() {
+      this.height = this.height * 2;
+    },
   },
 };
 </script>
