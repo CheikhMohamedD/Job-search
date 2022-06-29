@@ -5,6 +5,7 @@
       <div
         class="flex flex-nowrap h-full px-8 mx-auto border-b border-solid border-brand-gray-1"
       >
+        <!-- Website title -->
         <!-- le href du <a> est lie au script data() par une directive appelle le binding (v-bind) a mettre avant le href -->
         <a
           :href="url"
@@ -12,6 +13,7 @@
           data-test="main-nav-link-item"
           >{{ company }}</a
         >
+        <!-- Nav menu -->
         <nav class="h-full ml-12">
           <ul class="flex h-full p-0 m-0 list-none">
             <li
@@ -26,6 +28,7 @@
             </li>
           </ul>
         </nav>
+        <!-- button sign in -->
         <div class="flex items-center h-full ml-auto">
           <profile-image v-if="isLoggedIn" data-test="main-nav-pfp-item" />
           <action-button
