@@ -1,32 +1,26 @@
 <template>
-  <button :class="{ primary: primary }">
+  <button :class="buttonClass">
     {{ text }}
-  </button>
-  <button :class="{ primary: primary }" @click="doubleHeight">
-    {{ area }}
   </button>
 </template>
 
 <script>
 export default {
   name: "ActionButton",
-  props: ["text"],
+  props: ["text", "isPrimary"],
   data() {
     return {
-      primary: true,
-      width: 10,
-      height: 5,
+      primary: this.isPrimary,
     };
   },
   //la proprietes Computed permet d'avoir des donnees dynamiques comme sur notre exemple de la surface
+  /** Primary est une donnee qui switch dans le data() mais dans le computed il prendra la modification du changement d'etat. false or true */
   computed: {
-    area() {
-      return this.width * this.height;
-    },
-  },
-  methods: {
-    doubleHeight() {
-      this.height = this.height * 2;
+    buttonClass() {
+      return {
+        primary: this.primary, // true
+        secondary: !this.primary, // false if primary is true and visa versa
+      };
     },
   },
 };
@@ -38,5 +32,8 @@ button {
 }
 .primary {
   @apply text-white bg-brand-blue-1 hover:shadow-blue;
+}
+.secondary {
+  @apply text-brand-blue-1 bg-transparent hover:bg-brand-blue-2 hover:text-white;
 }
 </style>
