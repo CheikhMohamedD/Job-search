@@ -34,7 +34,7 @@
           <action-button
             v-else
             text="Sign In"
-            :is-primary="false"
+            type="secondary"
             data-test="main-nav-button-item"
             @click="loginUser"
           />

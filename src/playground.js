@@ -1,4 +1,7 @@
-let func = async () => {
-  console.log("ok");
-  return "test";
+const favFood = "chicken";
+
+const goodFood = {
+  [favFood]: true,
 };
+
+console.log(goodFood);

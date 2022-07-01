@@ -7,19 +7,17 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["text", "isPrimary"],
-  data() {
-    return {
-      primary: this.isPrimary,
-    };
-  },
+
+  props: ["text", "type"],
+
   //la proprietes Computed permet d'avoir des donnees dynamiques comme sur notre exemple de la surface
   /** Primary est une donnee qui switch dans le data() mais dans le computed il prendra la modification du changement d'etat. false or true */
   computed: {
     buttonClass() {
       return {
-        primary: this.primary, // true
-        secondary: !this.primary, // false if primary is true and visa versa
+        [this.type]: true,
+        // primary: this.type === "primary", // true
+        // secondary: this.type === "secondary", // false if primary is true and visa versa
       };
     },
   },
